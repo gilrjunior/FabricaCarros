@@ -1,0 +1,13 @@
+create database iftmupt;
+create table pessoa(
+   codigo integer not null,
+   nome varchar(30),
+   endereco varchar(50),
+   email varchar(20), 
+   primary key(codigo)
+);
+insert into pessoa values(6789,'Iwanow','Rua Rússia','iza@iftm.com');
+insert into pessoa values(1234,'Moragas','Rua Espanha','moragas@iftm.com');
+insert into pessoa values(639,'Vinitim','Rua Sapequinha','vinitim@iftm.com');
+
+select * from pessoa;
