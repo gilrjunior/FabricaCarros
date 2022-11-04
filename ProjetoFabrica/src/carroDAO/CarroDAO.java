@@ -1,7 +1,7 @@
 
 package carroDAO;
 
-import carro.Carro
+import carro.Carro;
 import conexao.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,6 +45,7 @@ public class CarroDAO {
     }
     
     public ArrayList<Carro> mostraCarros(){
+        
         
         
     }
