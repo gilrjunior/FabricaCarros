@@ -1,7 +1,7 @@
 
 package carroDAO;
 
-import carro.Carro
+import carro.Carro;
 import conexao.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,5 +49,19 @@ public class CarroDAO {
         
     }
     
-    
+    public void updateCarro(Carro carro){
+        PreparedStatement ps_estado;
+        String msgSql = "update carros set ano=?, modelo=?, fabricante=?, potencia=? where chassi=?";
+        
+        try{
+            ps_estado = this.conexao.prepareStatement(msgSql);
+            ps_estado.setInt(1, carro.getAno());
+            ps_estado.setString(2, carro.getModelo());
+            ps_estado.setString(3, carro.getFabricante());
+            ps_estado.setFloat(4, carro.getPotencia());
+            ps_estado.setString(5, carro.getChassi());
+        }catch(SQLException e){
+            System.out.print("\n Erro ao alterar no banco: "+e.toString());
+        }
+    }
 }
