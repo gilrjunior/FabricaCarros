@@ -52,10 +52,10 @@ public class CarroDAO {
     
     public void updateCarro(Carro carro){
         PreparedStatement ps_estado;
-        String msgSql = "update carros set ano=?, modelo=?, fabricante=?, potencia=? where chassi=?";
+        String query = "update carros set ano=?, modelo=?, fabricante=?, potencia=? where chassi=?";
         
         try{
-            ps_estado = this.conexao.prepareStatement(msgSql);
+            ps_estado = this.conexao.prepareStatement(query);
             ps_estado.setInt(1, carro.getAno());
             ps_estado.setString(2, carro.getModelo());
             ps_estado.setString(3, carro.getFabricante());
